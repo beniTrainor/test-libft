@@ -15,6 +15,20 @@ test_function() {
     "/tmp/test_${function}"
 }
 
+norminette_test() {
+    local file="$1"
+
+    if norminette "$file" > /dev/null 2>&1; then
+        printf "\033[0;32m[PASS]\033[0m %s\n" "$file"
+        return 0
+    else
+        printf "\033[0;31m[FAIL]\033[0m %s\n" "$file"
+        return 1
+    fi
+}
+
+source "./config.sh"
+
 if [ "$#" -ne 1 ]; then
     echo "Usage: $0 <libft-directory>"
     exit 1
@@ -22,16 +36,23 @@ fi
 
 PROJECT="$1"
 
-separator "Required files exist"
+separator "Norminette"
+norminette_test "$PROJECT/Makefile"
+norminette_test "$PROJECT/libft.h"
+for f in $PROJECT/*.c; do
+	norminette_test "$f"
+done
+
+separator "Required files"
 ./test_required_files_exist.sh "$PROJECT"
 
-separator "Required functions are correct"
+separator "Required function definitions"
 ./test_required_functions.sh "$PROJECT"
 
 separator "Function unit tests"
-test_function "ft_isalpha"
-test_function "ft_isdigit"
-test_function "ft_isalnum"
-test_function "ft_tolower"
-test_function "ft_toupper"
-test_function "ft_strlen"
+
+for f in ${REQUIRED_FILES[@]}; do
+	if [[ "$f" == *.c ]]; then
+		test_function "${f%.c}"
+	fi
+done
