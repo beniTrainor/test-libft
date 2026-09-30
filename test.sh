@@ -29,6 +29,8 @@ separator "Required functions are correct"
 ./test_required_functions.sh "$PROJECT"
 
 separator "Function unit tests"
+test_function "ft_isalpha"
+test_function "ft_isdigit"
 test_function "ft_isalnum"
 test_function "ft_tolower"
 test_function "ft_toupper"
