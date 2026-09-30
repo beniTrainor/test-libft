@@ -5,9 +5,7 @@
 
 PROJECT="$1"
 
-GREEN='\033[0;32m'
-RED='\033[0;31m'
-RESET='\033[0m'
+source "./constants.sh"
 
 declare -A required_functions=(
 
