@@ -14,6 +14,8 @@ int	main(void)
     assert(s2[3] == 'l');
     assert(s2[4] == 'o');
     assert(s2[5] == '\0');
+
+    free(s2);
     
     printf("\033[0;32m[PASS]\033[0m ft_strdup\n");
     return (0);
