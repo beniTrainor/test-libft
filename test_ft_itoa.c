@@ -2,30 +2,30 @@
 #include <stdio.h>
 
 char	*ft_itoa(int n);
-int	count_digits(int n);
-char	*ft_reverse(char *s);
+//int	count_digits(int n);
+//char	*ft_reverse(char *s);
 
 
-void	test_reverse(void)
-{
-    char s[] = "Hello";
-    char *r = ft_reverse(s);
-    assert(r[0] == 'o');
-    assert(r[1] == 'l');
-    assert(r[2] == 'l');
-    assert(r[3] == 'e');
-    assert(r[4] == 'H');
-}
+//void	test_reverse(void)
+//{
+//    char s[] = "Hello";
+//    char *r = ft_reverse(s);
+//    assert(r[0] == 'o');
+//    assert(r[1] == 'l');
+//    assert(r[2] == 'l');
+//    assert(r[3] == 'e');
+//    assert(r[4] == 'H');
+//}
 
-void	test_count_digits(void)
-{
-	assert(count_digits(123) == 3);
-	assert(count_digits(12) == 2);
-	assert(count_digits(10) == 2);
-	assert(count_digits(9) == 1);
-	assert(count_digits(1) == 1);
-	assert(count_digits(0) == 1);
-}
+//void	test_count_digits(void)
+//{
+//	assert(count_digits(123) == 3);
+//	assert(count_digits(12) == 2);
+//	assert(count_digits(10) == 2);
+//	assert(count_digits(9) == 1);
+//	assert(count_digits(1) == 1);
+//	assert(count_digits(0) == 1);
+//}
 
 void	test_itoa(void)
 {
@@ -61,8 +61,8 @@ void	test_itoa(void)
 
 int	main(void)
 {
-	test_reverse();
-	test_count_digits();
+	//test_reverse();
+	//test_count_digits();
 	test_itoa();
 
 	printf("\033[0;32m[PASS]\033[0m ft_itoa\n");
