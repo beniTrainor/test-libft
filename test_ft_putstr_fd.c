@@ -26,6 +26,6 @@ int	main(void)
 	assert(c[4] == 'o');
 	assert(c[5] == '\0');
 
-	printf("\033[0;32m[PASS]\033[0m ft_putchar_fd\n");
+	printf("\033[0;32m[PASS]\033[0m ft_putstr_fd\n");
 	return (0);
 }
