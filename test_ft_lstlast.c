@@ -44,6 +44,10 @@ int	main(void)
 
 	assert(ft_lstlast(lst1) == last);
 
+	free(lst1);
+	free(lst2);
+	free(lst3);
+
     printf("\033[0;32m[PASS]\033[0m ft_lstlast\n");
     return (0);
 }
