@@ -38,6 +38,9 @@ int	main(void)
 	assert(lst->next == old);
 	assert(((char *)lst->next->content)[0] == 'h');
 
+	free(lst);
+	free(new);
+
 	printf("\033[0;32m[PASS]\033[0m ft_lstadd_front\n");
 	return (0);
 }
