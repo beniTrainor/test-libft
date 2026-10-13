@@ -44,7 +44,7 @@ int	main(void)
 
 	assert(ft_lstlast(lst1) == last);
 
-	free(lst1);
+	free(last);
 	free(lst2);
 	free(lst3);
 
