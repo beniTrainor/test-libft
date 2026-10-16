@@ -10,6 +10,7 @@ test_function() {
     cc -Wall -Wextra -Werror \
         "$PROJECT/${function}.c" \
         "test_${function}.c" \
+		-I "$PROJECT" \
         -o "/tmp/test_${function}" || return 1
 
     "/tmp/test_${function}"
