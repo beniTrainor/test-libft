@@ -52,7 +52,12 @@ declare -A required_functions=(
 	["ft_lstadd_front.c"]="void	ft_lstadd_front(t_list **lst, t_list *new)"
 	["ft_lstsize.c"]="unsigned int	ft_lstsize(t_list *lst)"
 	["ft_lstlast.c"]="t_list	*ft_lstlast(t_list *lst)"
-	# TODO: add the rest...
+	["ft_lstadd_back.c"]="void	ft_lstadd_back(t_list **lst, t_list *new)"
+	["ft_lstdelone.c"]="void	ft_lstdelone(t_list *lst, void (*del)(void *))"
+	["ft_lstclear.c"]="void	ft_lstclear(t_list **lst, void (*del)(void *))"
+	["ft_lstiter.c"]="void	ft_lstiter(t_list *lst, void (*f)(void *))"
+	["ft_lstmap.c"]="t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))"
+
 )
 
 failed=0
