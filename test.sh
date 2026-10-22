@@ -8,7 +8,6 @@ test_function() {
     local function="$1"
 
     cc -Wall -Wextra -Werror \
-        "$PROJECT/${function}.c" \
         "test_${function}.c" \
 		-I "$PROJECT" \
 	"$PROJECT/libft.a" \
