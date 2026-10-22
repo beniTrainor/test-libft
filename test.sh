@@ -11,6 +11,7 @@ test_function() {
         "$PROJECT/${function}.c" \
         "test_${function}.c" \
 		-I "$PROJECT" \
+	"$PROJECT/libft.a" \
         -o "/tmp/test_${function}" || return 1
 
     "/tmp/test_${function}"
@@ -51,6 +52,10 @@ separator "Required function definitions"
 ./test_required_functions.sh "$PROJECT"
 
 separator "Function unit tests"
+if [ ! -f "$PROJECT/libft.a" ]; then
+    printf "\033[0;31m[FAIL]\033[0m %s\n" "Unable to find 'libft.a'. Remember to 'make'."
+    exit 1
+fi
 
 for f in ${REQUIRED_FILES[@]}; do
 	if [[ "$f" == *.c ]]; then
