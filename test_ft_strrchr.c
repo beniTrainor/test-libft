@@ -17,6 +17,11 @@ int	main(void)
 	char	*r2 = ft_strrchr(s2, c2);
 	assert(e2 == r2);
 
+	char	*s3 = "";
+	int	c3 = 'x';
+	char	*r3 = ft_strrchr(s3, c3);
+	assert(r3 == NULL);
+
 	printf("\033[0;32m[PASS]\033[0m ft_strrchr\n");
 	return (0);
 }
